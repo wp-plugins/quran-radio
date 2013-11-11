@@ -32,6 +32,14 @@ PS: For Support click to [Islam.com.kw](http://www.islam.com.kw/support/) .
 * You can used radio in widget.
 * Done!
 
+== Screenshots ==
+
+1. In Dashboard
+1. Select Language
+1. In Widget
+1. Show in Sidebar
+1. Show in Post/Page
+
 == Changelog ==
 
 = 1.0 =
