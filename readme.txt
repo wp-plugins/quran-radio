@@ -6,7 +6,7 @@ Requires at least: 3.0
 Tested up to: 3.6
 Stable tag: 1.0
 
-Quran Radio plugin is the first WordPress plugin that allows you to add a widget that plays an online Radio station for the translation of the Qur'an.
+Quran Radio plugin is the first WordPress plugin that allows you to add a widget that plays an online Radio station for the translation of the Quran.
 
 == Description ==
 
