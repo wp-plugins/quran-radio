@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Quran Radio
- * @version 1.0
+ * @version 1.1
  */
 /*
  Plugin Name: The Quran Radio
