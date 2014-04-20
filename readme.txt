@@ -11,12 +11,12 @@ Quran Radio plugin is the first WordPress plugin that allows you to add a widget
 == Description ==
 
 Quran Radio plugin is the first WordPress plugin that allows you to add a widget that plays an online Radio station
-for the translation of the meaning of the Quran in more than 35 languages, powered by EDC (e-Da`wah Committee).
+for the translation of the meaning of the Quran in more than 36 languages, powered by EDC (e-Da`wah Committee).
 
 
 Major new features in Quran Radio 1.1 include:
 
-* You can play 1 out of 35 translations of the Quran
+* You can play 1 out of 36 translations of the Quran
 * You can add the player to the Widget or to the post
 * The player works 24/7
 * You can control the display of the player
