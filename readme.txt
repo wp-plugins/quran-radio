@@ -3,8 +3,8 @@ Contributors: EDC Team
 Donate link: http://www.edc.org.kw/ar/category/donate/?lang=en
 Tags: Quran, Radio, Radio station, translations of the Quran, player, languages, EDC, MP3
 Requires at least: 3.0
-Tested up to: 3.6
-Stable tag: 1.0
+Tested up to: 3.9
+Stable tag: 1.1
 
 Quran Radio plugin is the first WordPress plugin that allows you to add a widget that plays an online Radio station for the translation of the Quran.
 
@@ -14,7 +14,7 @@ Quran Radio plugin is the first WordPress plugin that allows you to add a widget
 for the translation of the meaning of the Quran in more than 35 languages, powered by EDC (e-Da`wah Committee).
 
 
-Major new features in Quran Radio 1.0 include:
+Major new features in Quran Radio 1.1 include:
 
 * You can play 1 out of 35 translations of the Quran
 * You can add the player to the Widget or to the post
@@ -42,6 +42,6 @@ PS: For Support click to [Islam.com.kw](http://www.islam.com.kw/support/), [powe
 
 == Changelog ==
 
-= 1.0 =
+= 1.1 =
 
-* Added: it is new plugin.
+* Inserted three new radio stations.
