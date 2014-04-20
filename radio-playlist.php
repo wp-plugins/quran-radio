@@ -2,7 +2,7 @@
 /* 
  * Languages and Show functionality
  * Author: EDC Team
- * Since: 1.0
+ * Since: 1.1
  */
 
 /* Languages */
