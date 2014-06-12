@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Quran Radio
- * @version 1.1
+ * @version 1.2
  */
 /*
  Plugin Name: The Quran Radio
  Plugin URI: http://www.islam.com.kw/support
  Description: Quran Radio is the first WordPress plugin that allows you to add the translations of the Quran in 35 languages on posts, pages or widgets.
- Version: 1.0
+ Version: 1.2
  Author: EDC Team (E-Da`wah Committee)
  Author URI: http://www.islam.com.kw
  License: It is Free -_-
@@ -27,8 +27,8 @@ function edc_radio_plugin_scripts(){
 add_action('wp_enqueue_scripts','edc_radio_plugin_scripts'); 
 
 function edc_radio_plugin_styles() {
-	wp_register_style( 'edc-styles', plugin_dir_url( __FILE__ ).'style.css' );
-	wp_enqueue_style( 'edc-styles' );
+	wp_register_style( 'edc-radio-styles', plugin_dir_url( __FILE__ ).'style.css' );
+	wp_enqueue_style( 'edc-radio-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'edc_radio_plugin_styles' );
 
@@ -47,7 +47,7 @@ function run_sub_process(){
 
 function edc_adminHeader() {
 	echo "<style type=\"text/css\" media=\"screen\">\n";
-	echo "#quran-radio { float:right; width:400px; margin:0 auto; text-align:center; border:1px solid #cccccc; padding:5px; margin-top:15px; margin-right:15px; }\n";
+	echo "#quran-radio { float:right; width:50%; margin:0 auto; text-align:center; border:1px solid #cccccc; padding:5px; margin-top:15px; margin-right:15px; }\n";
 	echo "#quran-radio .lang { padding:5px 0 5px 0; margin:5px 0 10px 0; }\n";
 	echo "#quran-radio .playericons { padding:5px 0 5px 0; margin:5px 0 0 0; }\n";
 	echo "#quran-radio .playericons img { border:none; width:24px; height:24px; padding:0; margin:0 2px 0 2px; }\n";
@@ -58,10 +58,10 @@ function edc_adminHeader() {
 add_action('admin_head','edc_adminHeader');
 
 function get_radio($id,$shownotes=0){
-global $post, $languages;
+global $post, $Radio_Languages;
 $post_url = get_permalink( $post->ID );
 $rands = rand(0,999);
-$languagescount = count($languages);
+$languagescount = count($Radio_Languages);
 if($id > $languagescount){
 $code = '<p style="border:1px solid #cccccc; text-align:center; padding:10px;">Error ID!</p>';
 }else{
@@ -79,49 +79,49 @@ if(isset($_POST['show_radio_android'])){ $show_radio_android = 'on'; }else{ $sho
 
 if(get_option('show_radio_url') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][13])){ $icons .= '<a target="_blank" href="'.$languages[$id][13].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/url.png" alt="Source" title="Source" /></a>'; }
+if(!empty($Radio_Languages[$id][13])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][13].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/url.png" alt="Source" title="Source" /></a>'; }
 }
 if(get_option('show_radio_pdf') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][2])){ $icons .= '<a target="_blank" href="'.$languages[$id][2].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/pdf.png" alt="PDF Book" title="PDF Book" /></a>'; }
+if(!empty($Radio_Languages[$id][2])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][2].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/pdf.png" alt="PDF Book" title="PDF Book" /></a>'; }
 }
 if(get_option('show_radio_podcast') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][4])){ $icons .= '<a target="_blank" href="'.$languages[$id][4].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/podcast.png" alt="Podcast" title="Podcast" /></a>'; }
+if(!empty($Radio_Languages[$id][4])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][4].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/podcast.png" alt="Podcast" title="Podcast" /></a>'; }
 }
 if(get_option('show_radio_alllinks') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][5])){ $icons .= '<a target="_blank" href="'.$languages[$id][5].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/alllinks.png" alt="Download all files" title="Download all files" /></a>'; }
+if(!empty($Radio_Languages[$id][5])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][5].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/alllinks.png" alt="Download all files" title="Download all files" /></a>'; }
 }
 if(get_option('show_radio_MediaPlayer') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][6])){ $icons .= '<a target="_blank" href="'.$languages[$id][6].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/MediaPlayer.png" alt="Tune in MediaPlayer" title="Tune in MediaPlayer" /></a>'; }
+if(!empty($Radio_Languages[$id][6])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][6].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/MediaPlayer.png" alt="Tune in MediaPlayer" title="Tune in MediaPlayer" /></a>'; }
 }
 if(get_option('show_radio_QuickTime') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][7])){ $icons .= '<a target="_blank" href="'.$languages[$id][7].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/QuickTime.png" alt="Tune in QuickTime" title="Tune in QuickTime" /></a>'; }
+if(!empty($Radio_Languages[$id][7])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][7].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/QuickTime.png" alt="Tune in QuickTime" title="Tune in QuickTime" /></a>'; }
 }
 if(get_option('show_radio_realplayer') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][8])){ $icons .= '<a target="_blank" href="'.$languages[$id][8].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/realplayer.png" alt="Tune in RealPlayer" title="Tune in RealPlayer" /></a>'; }
+if(!empty($Radio_Languages[$id][8])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][8].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/realplayer.png" alt="Tune in RealPlayer" title="Tune in RealPlayer" /></a>'; }
 }
 if(get_option('show_radio_Winamp') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][9])){ $icons .= '<a target="_blank" href="'.$languages[$id][9].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/Winamp.png" alt="Tune in Winamp" title="Tune in Winamp" /></a>'; }
+if(!empty($Radio_Languages[$id][9])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][9].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/Winamp.png" alt="Tune in Winamp" title="Tune in Winamp" /></a>'; }
 }
 if(get_option('show_radio_appstore') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][11])){ $icons .= '<a target="_blank" href="'.$languages[$id][11].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/appstore.png" alt="Appstore" title="Appstore" /></a>'; }
+if(!empty($Radio_Languages[$id][11])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][11].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/appstore.png" alt="Appstore" title="Appstore" /></a>'; }
 }
 if(get_option('show_radio_android') == 'on'){
 $showicons = 1;
-if(!empty($languages[$id][12])){ $icons .= '<a target="_blank" href="'.$languages[$id][12].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/android.png" alt="Android" title="Android" /></a>'; }
+if(!empty($Radio_Languages[$id][12])){ $icons .= '<a target="_blank" href="'.$Radio_Languages[$id][12].'"><img src="'.plugin_dir_url( __FILE__ ).'/i/android.png" alt="Android" title="Android" /></a>'; }
 }
 $icons .= '</div>';
 	
 $code = '<div id="quran-radio">';
 if(get_option('radio_title') == ""){
-$radio_title = 'Qur\'an recitation with '.$languages[$id][0];
+$radio_title = 'Qur\'an recitation with '.$Radio_Languages[$id][0];
 }else{
 $radio_title = htmlentities(strip_tags(get_option('radio_title')));
 }
@@ -145,29 +145,18 @@ $radio_height = intval(get_option('radio_height'));
 }
 
 $code .= '<div class="lang">'.$radio_title.'</div>'."\n";
-/*
-$code .= '<div id="radio_container_'.$rands.'"><a href="http://www.macromedia.com/go/getflashplayer">Get the Flash Player</a> to see this player.</div>
-<script type="text/javascript" src="'.plugin_dir_url( __FILE__ ).'js/flashplayer/swfobject.js"></script>
-<script type="text/javascript">
-var s1 = new SWFObject("'.plugin_dir_url( __FILE__ ).'js/flashplayer/player.swf","ply","'.$radio_width.'","'.$radio_height.'","9","#FFFFFF");
-s1.addParam("allowfullscreen","true");
-s1.addParam("allowscriptaccess","always");
-s1.addParam("flashvars","file='.$languages[$id][10].'/;stream.nsv&type=mp3&volume=50&autostart='.$autostart.'");
-s1.write("radio_container_'.$rands.'");
-</script>';
-*/
 if($shownotes == 1){
 $code .= '<script type="text/javascript" src="'.plugin_dir_url( __FILE__ ).'js/jwplayer/jwplayer.js"></script>'."\n";
 }
 
-$code .= '<div style="width:'.$radio_width.'px; margin:0 auto;">'."\n";
+$code .= '<div style="width:100%; margin:5px 0 5px 0;">'."\n";
 $code .= '<div id="radio_container_'.$rands.'">Loading the player...</div>
 <script type="text/javascript">
 	jwplayer("radio_container_'.$rands.'").setup({
-		file: "'.$languages[$id][10].'/;*.mp3",
+		file: "'.$Radio_Languages[$id][10].'/;*.mp3",
 		autostart: '.$autostart.',
 		type: "audio/mpeg",
-		width: '.$radio_width.',
+		width: "100%",
 		height: '.$radio_height.',
 		title: "'.$radio_title.'",
 		controls: true,
@@ -175,13 +164,12 @@ $code .= '<div id="radio_container_'.$rands.'">Loading the player...</div>
 </script>';
 $code .= '</div>';
 if($showicons == 1){
-$code .= '<div style="padding:7px 0 7px 0;">'.$icons.'</div>';
+$code .= '<div style="padding:7px 0 7px 0;  text-align:center;">'.$icons.'</div>';
 }
 if($shownotes == 1){
 $code .= '<div style="padding:7px 0 7px 0;">Copy this code <span style="color:#0000ff;">radio['.$id.']</span> and past in post or page.</div>';
 }
 $code .= '</div>';
-//$code = '<p style="border:1px solid #cccccc; text-align:center; padding:10px;">'.$languages[$id][10].'</p>';
 }
 return $code;
 } 
@@ -192,20 +180,15 @@ return $text;
 }
  
 add_filter('the_content','EDC_content_replace');
-//add_filter('the_title','EDC_content_replace');
-
 
 add_action( 'admin_menu', 'edc_plugin_menu' );
 
 function edc_plugin_menu() {
-	//add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
 	add_menu_page( 'Quran Radio', 'Quran Radio', 'manage_options', 'edc-radio-edit', 'edc_radio_options', ''.trailingslashit(plugins_url(null,__FILE__)).'/i/radio.png' );
-	//add_submenu_page( 'edc-radio-edit', 'Quran Radio 2', 'Edit 2', 'manage_options', 'sub-edit-2', 'edc_radio_options_2');
-	//add_submenu_page( 'edc-radio-edit', 'Quran Radio 3', 'Edit 3', 'manage_options', 'sub-edit-3', 'edc_radio_options_3');
 }
 
 function edc_radio_options() {
-	global $languages;
+	global $Radio_Languages;
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
@@ -296,8 +279,8 @@ $radio_height = intval(get_option('radio_height'));
 					<div>
 							<label for="edc_radio_form">Languages:</label>
 						<select name="edc_radio_form" id="edc_radio_form">
-							<?php for($i = 1; $i <= count($languages); $i++): ?>
-								<option title="<?php echo $languages[$i][0]; ?>" value="<?php echo $i; ?>" <?php echo ( get_option('edc_radio_form') == $i ) ? 'selected="yes"' : ''; ?>><?php echo $i.'- '.$languages[$i][1]; ?></option>
+							<?php for($i = 1; $i <= count($Radio_Languages); $i++): ?>
+								<option title="<?php echo $Radio_Languages[$i][0]; ?>" value="<?php echo $i; ?>" <?php echo ( get_option('edc_radio_form') == $i ) ? 'selected="yes"' : ''; ?>><?php echo $i.'- '.$Radio_Languages[$i][1]; ?></option>
 							<?php endfor; ?>
 						</select>
 	<?php echo get_radio(get_option('edc_radio_form'),1); ?>
@@ -310,10 +293,12 @@ $radio_height = intval(get_option('radio_height'));
 					</div>
 					
 					<h3>Player Options:</h3>
+					<!--
 					<div>
 						<input id="radio_width" type="text" name="radio_width" value="<?php echo intval($radio_width); ?>" />
 						<label for="radio_width">Player width.</label>
 					</div>
+					-->
 					<div>
 						<input id="radio_height" type="text" name="radio_height" value="<?php echo intval($radio_height); ?>" />
 						<label for="radio_height">Player height.</label>
