@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Quran Radio
- * @version 1.2
+ * @version 1.3
  */
 /*
  Plugin Name: The Quran Radio
  Plugin URI: http://www.islam.com.kw/support
- Description: Quran Radio is the first WordPress plugin that allows you to add the translations of the Quran in 35 languages on posts, pages or widgets.
- Version: 1.2
+ Description: Quran Radio is the first WordPress plugin that allows you to add the translations of the Quran in 64 languages on posts, pages or widgets.
+ Version: 1.3
  Author: EDC Team (E-Da`wah Committee)
  Author URI: http://www.islam.com.kw
  License: It is Free -_-
@@ -59,7 +59,7 @@ add_action('admin_head','edc_adminHeader');
 
 function get_radio($id,$shownotes=0){
 global $post, $Radio_Languages;
-$post_url = get_permalink( $post->ID );
+//$post_url = get_permalink( $post->ID );
 $rands = rand(0,999);
 $languagescount = count($Radio_Languages);
 if($id > $languagescount){
@@ -196,7 +196,7 @@ function edc_radio_options() {
 if(isset($_POST['submitted']) && $_POST['submitted'] == 1){
 $option_name = 'edc_radio_form';
 $new_value = $_POST['edc_radio_form'];
-$radio_width = $_POST['radio_width'];
+//$radio_width = $_POST['radio_width'];
 $radio_height = $_POST['radio_height'];
 
 if(isset($_POST['android'])){ $android = 'on'; }else{ $android = 'off'; }
@@ -229,7 +229,7 @@ if ( get_option( $option_name ) !== false ) {
 	update_option( 'show_radio_android', $show_radio_android );
 	update_option( 'check_autostart', $show_autostart );
 	update_option( 'radio_title', addslashes($_POST['radio_title']) );
-	update_option( 'radio_width', intval($_POST['radio_width']) );
+	//update_option( 'radio_width', intval($_POST['radio_width']) );
 	update_option( 'radio_height', intval($_POST['radio_height']) );
 } else {
 	add_option( $option_name, $new_value, null );
@@ -265,7 +265,7 @@ if(get_option('show_radio_appstore') == 'on'){ $check_show_radio_appstore = 'che
 if(get_option('show_radio_android') == 'on'){ $check_show_radio_android = 'checked="checked"'; }else{ $check_show_radio_android = ''; }
 if(get_option('check_autostart') == 'on'){ $check_autostart = 'checked="checked"'; }else{ $check_autostart = ''; }
 $radio_title = strip_tags(get_option('radio_title'));
-$radio_width = intval(get_option('radio_width'));
+//$radio_width = intval(get_option('radio_width'));
 $radio_height = intval(get_option('radio_height'));
 
 ?>
@@ -273,7 +273,7 @@ $radio_height = intval(get_option('radio_height'));
 			<div class="dbx-content">				
 				<h2>Quran Radio</h2>
 				<br />
-				<form name="sytform" action="<?php echo $actionurl; ?>" method="post">
+				<form name="sytform" action="" method="post">
 					<input type="hidden" name="submitted" value="1" />
 					<h3>Select Language:</h3>
 					<div>
@@ -357,22 +357,4 @@ $radio_height = intval(get_option('radio_height'));
 			</div>   
 		</div>
 <?php
-}
-
-function edc_radio_options_2() {
-	if ( !current_user_can( 'manage_options' ) )  {
-		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
-	}
-	echo '<div class="wrap">';
-	echo '<p>Test 2.</p>';
-	echo '</div>';
-}
-
-function edc_radio_options_3() {
-	if ( !current_user_can( 'manage_options' ) )  {
-		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
-	}
-	echo '<div class="wrap">';
-	echo '<p>Test 3.</p>';
-	echo '</div>';
 }
