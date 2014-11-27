@@ -1,6 +1,6 @@
 === Quran Radio ===
 Contributors: EDC Team
-Donate link: http://www.edc.org.kw/
+Donate link: http://www.edc.org.kw
 Tags: Quran, Radio, Radio station, translations of the Quran, player, languages, EDC, MP3
 Requires at least: 3.0
 Tested up to: 4.0.1
