@@ -6,7 +6,7 @@
 /*
  Plugin Name: The Quran Radio
  Plugin URI: http://www.islam.com.kw/support
- Description: Quran Radio is the first WordPress plugin that allows you to add the translations of the Quran in 65 languages on posts, pages or widgets.
+ Description: Quran Radio is the first WordPress plugin that allows you to add the translations of the Quran in 38 languages on posts, pages or widgets.
  Version: 1.4
  Author: EDC Team (E-Da`wah Committee)
  Author URI: http://www.islam.com.kw
