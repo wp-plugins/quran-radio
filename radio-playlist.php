@@ -1,6 +1,6 @@
 <?php
 /* 
- * Languages and Show functionality
+ * Languages and Show functions
  * Author: EDC Team
  * Since: 1.4
  */

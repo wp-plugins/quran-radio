@@ -21,7 +21,7 @@ Major new features in Quran Radio 1.4 include:
 * The player works 24/7
 * You can control the display of the player
 
-PS: For Support click to [Islam.com.kw](http://www.islam.com.kw/support/), [powered by EDC (e-Da`wah Committee)](http://www.edc.org.kw).
+PS: For Support click to [Islam.com.kw](http://www.islam.com.kw/support), [powered by EDC (e-Da`wah Committee)](http://www.edc.org.kw).
 
 == Installation ==
 
