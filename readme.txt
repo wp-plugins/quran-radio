@@ -43,10 +43,11 @@ PS: For Support click to [Islam.com.kw](http://www.islam.com.kw/support), [power
 
 == Changelog ==
 
-= 1.4 =
+= 1.5 =
 
 * Added: More Radio.
 * Fixed: Error Array list.
+* Fixed: Widget title.
 
 = 1.4 =
 
