@@ -80,8 +80,15 @@ $Radio_Languages = array(
 "66"=>array("Translation of the Quran in Swahili","Farsi","http://www.qurantranslations.net/quran/pdf/Translation_of_the_Quran_in_Swahili.pdf","http://www.qurantranslations.net/podcast/Swahili/Translation_of_the_Quran_in_Swahili.rss","","http://www.qurantranslations.net/txt/Swahili/Translation_of_the_Quran_in_Swahili.txt","http://www.qurantranslations.net/radio/swahili/MediaPlayer.asx","http://www.qurantranslations.net/radio/swahili/QuickTime.qtl","http://www.qurantranslations.net/radio/swahili/RealPlayer.ram","http://www.qurantranslations.net/radio/swahili/Winamp.pls","http://quraan.us:9860","","","http://www.qurantranslations.net/index.php?moshaf=72&amp;id=55")
 );
  
-function player_type($type, $rands, $width, $height, $fullscreen, $autostart, $edc_radio_id, $icons){
+function player_type($type, $rands, $width, $height, $fullscreen, $autostart, $edc_radio_id, $icons, $title=""){
 global $Radio_Languages;
+
+if($title == ""){
+$current_title = $Radio_Languages[$edc_radio_id][0];
+}else{
+$current_title = $title;
+}
+
 $code = '';
 if($type == 1){
 $code .= '<div id="radio_container_'.$rands.'"><a href="http://www.macromedia.com/go/getflashplayer">Get the Flash Player</a> to see this player.</div>
@@ -93,7 +100,7 @@ s1.addParam("allowscriptaccess","always");
 s1.addParam("flashvars","file='.$Radio_Languages[$edc_radio_id][10].'/;stream.nsv&type=mp3&volume=50&autostart='.$autostart.'");
 s1.write("radio_container_'.$rands.'");
 </script>';
-$code .= '<div style="padding:7px 0 7px 0;  text-align:center;">Qur\'an recitation with '.$Radio_Languages[$edc_radio_id][0].' translation'.$icons.'</div>';
+$code .= '<div style="padding:7px 0 7px 0;  text-align:center;">'.$current_title.''.$icons.'</div>';
 }elseif($type == 2){
 $code .= '<object id="mediaPlayer" width="'.$width.'" height="'.$height.'" classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95" codebase="http://activex.microsoft.com/activex/controls/ mplayer/en/nsmp2inf.cab#Version=5,1,52,701" standby="Loading Microsoft Windows Media Player components…" type="application/x-oleobject">
 <param name="fileName" value="'.$Radio_Languages[$edc_radio_id][6].'" />
@@ -108,7 +115,7 @@ $code .= '<object id="mediaPlayer" width="'.$width.'" height="'.$height.'" class
 <embed width="'.$width.'" height="'.$height.'" src="'.$Radio_Languages[$edc_radio_id][6].'" type="application/x-mplayer2" pluginspage="http://microsoft.com/windows/mediaplayer/ en/download/" id="mediaPlayer" name="mediaPlayer" displaysize="4" autosize="0" EnableContextMenu="0" bgcolor="darkblue" showcontrols="1" showtracker="1" showdisplay="0" showstatusbar="1" videoborder3d="0" designtimesp="5311"></embed>
 </object>';
 
-$code .= '<div style="padding:7px 0 7px 0;  text-align:center;">Qur\'an recitation with '.$Radio_Languages[$edc_radio_id][0].' translation'.$icons.'</div>';
+$code .= '<div style="padding:7px 0 7px 0;  text-align:center;">'.$current_title.''.$icons.'</div>';
 }else{
 $code .= '<div style="width:100%; margin:5px 0 5px 0;">'."\n";
 $code .= '<div id="radio_container_post_'.$rands.'">Loading the player...</div>
@@ -119,12 +126,12 @@ $code .= '<div id="radio_container_post_'.$rands.'">Loading the player...</div>
 		type: "audio/mpeg",
 		width: "100%",
 		height: '.$height.',
-		title: "Qur\'an recitation '.$Radio_Languages[$edc_radio_id][0].'",
+		title: "'.$current_title.'",
 		controls: true,
 	});
 </script>';
 $code .= '</div>';
-$code .= '<div style="padding:7px 0 7px 0; text-align:center;">Qur\'an recitation with '.$Radio_Languages[$edc_radio_id][0].' translation'.$icons.'</div>';
+$code .= '<div style="padding:7px 0 7px 0; text-align:center;">'.$current_title.''.$icons.'</div>';
 }
 return $code;
 }
@@ -180,7 +187,7 @@ if(!empty($Radio_Languages[$edc_radio_id][5])){ $icons .= '<a target="_blank" hr
 $icons .= '</div>';
 
 $code = '<div id="quran-radio-widget">';
-$code .= player_type($edc_player_type, $rands, $width, $height, $fullscreen, $autostart, $edc_radio_id, $icons);
+$code .= player_type($edc_player_type, $rands, $width, $height, $fullscreen, $autostart, $edc_radio_id, $icons, $title);
 $code .= '</div>';
 }
 
