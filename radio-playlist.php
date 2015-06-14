@@ -2,7 +2,7 @@
 /* 
  * Languages and Show functions
  * Author: EDC Team
- * Since: 1.6
+ * Since: 1.7
  */
 
 /* Languages */
@@ -78,7 +78,8 @@ $Radio_Languages = array(
 "64"=>array("Tafsir by Al-Sha`rawi (Arabic)","Tafsir by Al-Sha`rawi (Arabic)","","","","","http://www.qurantranslations.net/radio/sharawy/MediaPlayer.asx","http://www.qurantranslations.net/radio/sharawy/QuickTime.qtl","http://www.qurantranslations.net/radio/sharawy/RealPlayer.ram","http://www.qurantranslations.net/radio/sharawy/Winamp.pls","http://quraan.us:9888","","",""),
 "65"=>array("Quran Recitation by Sheikh Mohammad Al-Tablawi","Quran Recitation by Sheikh Mohammad Al-Tablawi","","","","","http://www.qurantranslations.net/radio/ltablawi/MediaPlayer.asx","http://www.qurantranslations.net/radio/ltablawi/QuickTime.qtl","http://www.qurantranslations.net/radio/ltablawi/RealPlayer.ram","http://www.qurantranslations.net/radio/ltablawi/Winamp.pls","http://quraan.us:9882","","",""),
 "66"=>array("Translation of the Quran in Swahili","Swahili","http://www.qurantranslations.net/quran/pdf/Translation_of_the_Quran_in_Swahili.pdf","http://www.qurantranslations.net/podcast/Swahili/Translation_of_the_Quran_in_Swahili.rss","","http://www.qurantranslations.net/txt/Swahili/Translation_of_the_Quran_in_Swahili.txt","http://www.qurantranslations.net/radio/swahili/MediaPlayer.asx","http://www.qurantranslations.net/radio/swahili/QuickTime.qtl","http://www.qurantranslations.net/radio/swahili/RealPlayer.ram","http://www.qurantranslations.net/radio/swahili/Winamp.pls","http://quraan.us:9860","","","http://www.qurantranslations.net/index.php?moshaf=72&amp;id=55"),
-"67"=>array("Translation of the Quran in Pashto","Pashto","","http://www.qurantranslations.net/podcast/Pashto/Holy_Quran_in_the_Pashto_Language.rss","","http://www.qurantranslations.net/txt/Pashto/Holy_Quran_in_the_Pashto_Language.txt","http://www.qurantranslations.net/radio/pashtoqu/MediaPlayer.asx","http://www.qurantranslations.net/radio/pashtoqu/QuickTime.qtl","http://www.qurantranslations.net/radio/pashtoqu/RealPlayer.ram","http://www.qurantranslations.net/radio/pashtoqu/Winamp.pls","http://quraan.us:9874","","","http://www.qurantranslations.net/index.php?moshaf=72&amp;id=54")
+"67"=>array("Translation of the Quran in Pashto","Pashto","","http://www.qurantranslations.net/podcast/Pashto/Holy_Quran_in_the_Pashto_Language.rss","","http://www.qurantranslations.net/txt/Pashto/Holy_Quran_in_the_Pashto_Language.txt","http://www.qurantranslations.net/radio/pashtoqu/MediaPlayer.asx","http://www.qurantranslations.net/radio/pashtoqu/QuickTime.qtl","http://www.qurantranslations.net/radio/pashtoqu/RealPlayer.ram","http://www.qurantranslations.net/radio/pashtoqu/Winamp.pls","http://quraan.us:9874","","","http://www.qurantranslations.net/index.php?moshaf=72&amp;id=54"),
+"68"=>array("Tafsir by Al-Sa`di in Russian","Tafsir by Al-Sa`di in Russian","http://www.qurantranslations.net/quran/pdf/ru_quran_russian.pdf","http://www.qurantranslations.net/podcast/Russian/Holy_Quran_in_the_Russian_Language_1.rss","https://itunes.apple.com/kw/podcast/translation-meaning-quran/id880558588","http://www.qurantranslations.net/txt/Russian/Holy_Quran_in_the_Russian_Language_1.txt","http://www.qurantranslations.net/radio/saadirussian/MediaPlayer.asx","http://www.qurantranslations.net/radio/saadirussian/QuickTime.qtl","http://www.qurantranslations.net/radio/saadirussian/RealPlayer.ram","http://www.qurantranslations.net/radio/saadirussian/Winamp.pls","http://quraan.us:9862","http://tunein.com/radio/EDC-s190958/","http://tunein.com/radio/EDC-s190958/","http://www.qurantranslations.net/index.php?moshaf=16&amp;id=16")
 );
  
 function player_type($type, $rands, $width, $height, $fullscreen, $autostart, $edc_radio_id, $icons, $title=""){
